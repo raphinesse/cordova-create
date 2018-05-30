@@ -129,8 +129,8 @@ describe('create end-to-end', function () {
         // Check if package.json exists.
         expect(path.join(project, 'package.json')).toExist();
 
-        // [CB-12397] Check that .gitignore does not exist
-        expect(path.join(project, '.gitignore')).not.toExist();
+        // [CB-12397] Check that .gitignore exists
+        expect(path.join(project, '.gitignore')).toExist();
 
         // Check that we got package.json (the correct one)
         var pkjson = requireFresh(path.join(project, 'package.json'));
@@ -141,8 +141,8 @@ describe('create end-to-end', function () {
     function checkProjectArtifactsWithPackageFromSubDir () {
         checkProjectCommonArtifacts();
 
-        // [CB-12397] Check that .gitignore does not exist
-        expect(path.join(project, '.gitignore')).not.toExist();
+        // [CB-12397] Check that .gitignore exists
+        expect(path.join(project, '.gitignore')).toExist();
 
         // Check if config files exist.
         expect(path.join(project, 'www', 'index.html')).toExist();
